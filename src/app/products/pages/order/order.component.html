@@ -1,0 +1,83 @@
+
+<p-panel header="Pipes personalizados" class="p-1" >
+  <p>
+    Pipes de Angular {{'personalizados' | toggleCase:isUpperCase }}
+  </p>
+</p-panel>
+
+<p-toolbar>
+
+  <div class="p-toolbar-group-start">
+    <p-button
+      label="ToogleCase"
+      icon="pi pi-bolt"
+      class="mr-2"
+      (click)="toggleUpperCase()"
+      ></p-button>
+  </div>
+
+  <div class="p-toolbar-group-end">
+    
+    <p-button 
+      label="Por nombre" 
+      icon="pi pi-sort" 
+      styleClass="p-button-success mr-2"
+      (click)="changeOrder('name')"  
+    ></p-button>
+    
+    <p-button 
+      label="Por Volar" 
+      icon="pi pi-sort" 
+      styleClass="p-button-danger mr-2"
+      (click)="changeOrder('canFly')"
+      ></p-button>
+
+    <p-button 
+      label="Por Color" 
+      icon="pi pi-sort" 
+      styleClass="p-button-warning mr-2"
+        (click)="changeOrder('color')"
+      ></p-button
+      >
+  </div>
+
+</p-toolbar>
+
+<div class="grid">
+  <div class="col mt-2">
+    <div class="card">
+
+      <p-panel header="Héroes">
+        <p-table [value]=" heros | sortBy:orderBy " [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Can Fly</th>
+                    <th>Color</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-hero>
+                <tr>
+                    <td>{{ hero.name }}</td>
+                    <td>{{ hero.canFly | canfly | titlecase }}</td>
+                    <td>{{ hero.color }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+      </p-panel>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="col-12 md:col-12">
+  <p-fieldset legend="pipe personalizado" [toggleable]="true" >
+    <div style="width: 100%; overflow: auto;">
+      <pre>
+        <code [innerHTML]="codeSnippet" style="white-space: pre-wrap; word-wrap: break-word;"></code>
+      </pre>
+    </div>
+
+  </p-fieldset>
+</div>

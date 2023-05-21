@@ -1,0 +1,85 @@
+
+<p-panel header="Pipes Básicos" class="p-1" >
+  <p>
+    Pipes incluídos en Angular - Usualmente en el Common Module
+  </p>
+</p-panel>
+
+<div class="grid">
+
+  <div class="col-12 flex align-items-center justify-content-center">
+    <h1>Textos</h1> 
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="uppercase">
+      {{ nameLower | uppercase }} | uppercase
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="lowercase">
+      {{ nameUpper | lowercase }} | lowercase
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="titlecase">
+      {{ fullName | titlecase }} | titlecase
+    </p-card>
+  </div>
+
+  <div class="col-12 flex align-items-center justify-content-center">
+    <h1>Fechas</h1>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date">
+      {{ customDate | date  }} | date
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date - short">
+      {{ customDate | date:'short'  }} | date:'short'
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date - long">
+      {{ customDate | date:'long'  }} | date:'long'
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date - MMMM">
+      {{ customDate | date:'MMMM'  }} | date:'MMMM'
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date - MMMM, dd, yyyy">
+      {{ customDate | date:'MMMM, dd, yyyy'  }} | date:'MMMM, dd, yyyy'
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date - 'long':'GMT-6'">
+      {{ customDate | date:'long':'GMT-6'  }} | date:'long':'GMT-6'
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date - long:'GMT-4':'es-VE'">
+      {{ customDate | date:'long':'GMT-4':'es-VE'}} | date:'long':'GMT-4':'es-VE'
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="date - long:'':'fr-CA'">
+      {{ customDate | date:'long':'':'fr-CA'}} | date:'long':'':'fr-CA'
+    </p-card>
+  </div>
+
+</div>
+
